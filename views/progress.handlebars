@@ -1,0 +1,24 @@
+{{#each projects}}
+    <div class="project">
+        <h2>{{title}}</h2>
+        <p><strong>URL du projet :</strong> <a href="{{url}}" target="_blank">{{url}}</a></p>
+        <p><strong>Créé le :</strong> {{createdAt}}</p>
+        <p><strong>Mis à jour le :</strong> {{updatedAt}}</p>
+
+        <div>
+            <h3>Colonnes :</h3>
+            {{#each columns.nodes}}
+                <div class="column">
+                    <h4>{{name}}</h4>
+                    <ul>
+                        {{#each cards.nodes}}
+                            <li>{{content.title}}</li>
+                        {{/each}}
+                    </ul>
+                </div>
+            {{/each}}
+        </div>
+    </div>
+{{else}}
+    <p>Aucun projet trouvé.</p>
+{{/each}}
